@@ -26,18 +26,18 @@ typedef struct linklist
 //不储存数据
 lklst_ptr_node create_linklist(void);
 
-//链表比较重要的：插入
-//地址不连续，一开始只知道头节点的地址
-//next 先指向 头节点
-//malloc 申请到之后会返回地址
-//然后 头节点的next指向下一个结点的地址
+// 链表比较重要的：插入
+// 地址不连续，一开始只知道头节点的地址
+// next 先指向 头节点
+// malloc 申请到之后会返回地址
+// 然后 头节点的next指向下一个结点的地址
 // H = H->next
-//头 -> 0 -> 1
-//在头和0之间插入一个p
-//区别：头插和尾插，而尾插可以被头插替换掉
-//这里指向的顺序很重要
-//头插：
-//p的next = h的next
+// 头 -> 0 -> 1
+// 在头和0之间插入一个p
+// 区别：头插和尾插，而尾插可以被头插替换掉
+// 这里指向的顺序很重要
+// 头插：
+// p的next = h的next
 //h的next = p
 //尾插：
 //h的next = p
@@ -69,7 +69,11 @@ int destory_linklist(lklst_ptr_node L);
 //清空
 int clean_linklist(lklst_ptr_node L);
 
+//逆序
+int reversed_order_linklist(lklst_ptr_node L);
 
+//排序
+int sort_linklist(lklst_ptr_node L);
 
 
 #endif
