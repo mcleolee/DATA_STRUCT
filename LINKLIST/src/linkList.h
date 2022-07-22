@@ -17,6 +17,8 @@ typedef struct linklist
 //     linklist_data_t data;
 //     lklst_ptr_node *next;
 // };
+
+
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //创建头节点
 //作用：统一插入操作时的代码
@@ -47,15 +49,25 @@ lklst_ptr_node create_linklist(void);
 int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data);
 
 //计算一下len的长度
-//int get_len_linklist();
+int get_len_linklist(lklst_ptr_node L);
 
+//根据’位置‘删除
+int delete_linklist(lklst_ptr_node L,int pos);
 
+//判空
+int empty_linklist(lklst_ptr_node L);
 
+//打印
+int show_linklist(lklst_ptr_node L);
 
+//根据值修改
+int change_linklist(lklst_ptr_node L,linklist_data_t old_data,linklist_data_t new_data);
 
+//摧毁
+int destory_linklist(lklst_ptr_node L);
 
-
-
+//清空
+int clean_linklist(lklst_ptr_node L);
 
 
 
