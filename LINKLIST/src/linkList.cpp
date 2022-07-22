@@ -15,35 +15,36 @@ lklst_ptr_node create_linklist(void)
     return L;
 }
 
-int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data)
+int insert_linklist(lklst_ptr_node L,int pos,linklist_data_t ISTdata)
 {
-    int len = get_len_linklist(L);
+    int len = get_length_linklist(L);
     //因为链表不会满，有一个来一个，所以不用判满
     //判断 pos 是否合法
     if(0 > pos || pos > len)
     {
-        printf("position is default\n");
+        printf("the position you ask is fatal\n");
         return -1;
     }
-
-    //找到插入位置的前一个node地址
-    for(int i=0; i<pos; i++)//如果在第三个，L 就走到第二位
+    //让L到pos前，这样新节点就在L和L->next之间
+    for(int i=0;i<pos;i++)
     {
         L = L->next;
     }
+    //创建新节点
+    lklst_ptr_node ptr_new_node = create_linklist();
 
-    //插入
-    lklst_ptr_node p = create_linklist();   //创建新节点
-    p->data = data;                         //初始化新节点
+    //把插入的数据给新节点
+    ptr_new_node->data = ISTdata;
 
-    //???
-    p->next = L->next;
-    L->next = p;
+    //把新node和前后节点连接起来
+    ptr_new_node->next = L->next;
+    L->next = ptr_new_node;
 
     return 0;
+
 }
 //计算len的长度
-int get_len_linklist(lklst_ptr_node L)
+int get_length_linklist(lklst_ptr_node L)
 {
     int len = 0;
     while(L->next) //如果要再少循环一次：L->next->next
@@ -54,6 +55,20 @@ int get_len_linklist(lklst_ptr_node L)
     return len;
 }
 
+//判空
+int empty_linklist(lklst_ptr_node L)
+{
+    if(NULL == L->next)
+    {
+        printf("L is on the end of the list\n");
+        return 0;
+    }
+    else
+    {
+        return -2;
+    }
+}
+
 //根据’位置‘删除
 int delete_linklist(lklst_ptr_node L,int pos)
 {
@@ -62,7 +77,7 @@ int delete_linklist(lklst_ptr_node L,int pos)
         printf("L is empty\n");
         return -1;
     }
-    if(0 > pos || get_len_linklist(L) <= pos)
+    if(0 > pos || get_length_linklist(L) <= pos)
     {
         printf("position is default\n");
         return -1;
@@ -84,18 +99,6 @@ int delete_linklist(lklst_ptr_node L,int pos)
     return 0;
 }
 
-//判空
-int empty_linklist(lklst_ptr_node L)
-{
-    if(NULL == L->next)
-    {
-        return 0;
-    }
-    else
-    {
-        return -1;
-    }
-}
 
 //打印
 int show_linklist(lklst_ptr_node L)

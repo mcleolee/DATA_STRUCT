@@ -7,7 +7,7 @@ typedef char linklist_data_t;
 typedef struct linklist
 {
     linklist_data_t data;
-    struct linklist *next;
+    struct linklist *next; //不能写成lklst_ptr_node *next!!!
 }lklst_node, *lklst_ptr_node;
 
 //也可以
@@ -49,7 +49,7 @@ lklst_ptr_node create_linklist(void);
 int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data);
 
 //计算一下len的长度
-int get_len_linklist(lklst_ptr_node L);
+int get_length_linklist(lklst_ptr_node L);
 
 //根据’位置‘删除
 int delete_linklist(lklst_ptr_node L,int pos);
