@@ -2,14 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 lklst_ptr_node create_linklist(void)
 {
     lklst_ptr_node L = (lklst_ptr_node)malloc(sizeof(lklst_node));
     if(NULL == L)
     {
-        printf("malloc is default\n");
+        printf("apply for malloc failed\n");
         return NULL;
     }
     //初始化指针，不然野指针必然段错误
@@ -19,7 +17,7 @@ lklst_ptr_node create_linklist(void)
 
 int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data)
 {
-    int len;// = get_len_linklist(L);//先不写
+    int len = get_len_linklist(L);
     //因为链表不会满，有一个来一个，所以不用判满
     //判断 pos 是否合法
     if(0 > pos || pos > len)
@@ -27,6 +25,7 @@ int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data)
         printf("position is default\n");
         return -1;
     }
+
     //找到插入位置的前一个node地址
     for(int i=0; i<pos; i++)//如果在第三个，L 就走到第二位
     {
@@ -37,8 +36,10 @@ int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data)
     lklst_ptr_node p = create_linklist();   //创建新节点
     p->data = data;                         //初始化新节点
 
+    //???
     p->next = L->next;
     L->next = p;
+
     return 0;
 }
 
@@ -81,15 +82,20 @@ int delete_linklist(lklst_ptr_node L,int pos)
 
     //释放空间
     free(temp);
+    return 0;
 }
 
 //判空
 int empty_linklist(lklst_ptr_node L)
 {
     if(NULL == L->next)
+    {
         return 0;
+    }
     else
+    {
         return -1;
+    }
 }
 
 //打印
@@ -148,16 +154,22 @@ int change_linklist(lklst_ptr_node L,linklist_data_t old_data,linklist_data_t ne
 
 
 //摧毁
-int destory_linklist(lklst_ptr_node L)
+int destory_linklist(lklst_ptr_node *L)
 {
     //判空
-    if(0 == empty_linklist(L))
+    if(0 == empty_linklist(*L))
     {
-        free(L);
+        free(*L);
         return 0;
     }   
-    clean_linklist(L);
-    free(L);
+
+
+    clean_linklist(*L);
+    // puts("phase 1");
+    free(*L);
+    *L = NULL;
+    // puts("phase 2");
+
     return 0;
 }
 
@@ -171,7 +183,7 @@ int clean_linklist(lklst_ptr_node L)
         printf("L is empty\n");
         return -1;
     }
-
+    lklst_ptr_node p = L;
     lklst_ptr_node temp = L->next;
     while(temp)
     {
@@ -180,5 +192,85 @@ int clean_linklist(lklst_ptr_node L)
         free(L);
     }
     L->next = NULL;
+    return 0;
+}
+
+
+//逆序
+int reversed_order_linklist(lklst_ptr_node L)
+{
+    //判空
+    if(0 == empty_linklist(L))
+    {
+        printf("L is empty\n");
+        return -1;
+    }
+
+    //分成两个链表
+    lklst_ptr_node p = L->next;
+    lklst_ptr_node ap = p;
+    L->next = NULL;
+
+    //把 p 指向的链表依次对 L 指向的链表做头插
+    while(p)
+    {
+        //向后移一位
+        ap = p;
+        p = p->next;
+        
+        //在做头插
+        ap->next = L->next;
+        L->next = ap;
+    }
+}
+
+
+//排序
+int sort_linklist(lklst_ptr_node L)
+{
+    //判空
+    if(0 == empty_linklist(L))
+    {
+        printf("L is empty\n");
+        return -1;
+    }
+
+    //分成两个链表
+    lklst_ptr_node p = L->next;
+    lklst_ptr_node ap = p;
+    lklst_ptr_node temp = L;
+
+    int flag = 0;
+
+    L->next = NULL;
+
+    //把 p 指向的链表依次对 L 指向的链表做头插
+    while(p)
+    {
+        //向后移一位
+        ap = p;
+        p = p->next;
+
+        //有序插入
+        temp = L;
+        while(temp->next)
+        {
+            if(temp->next->data > ap->data)
+            {
+                ap->next = temp->next;
+                temp->next = ap;
+                flag = 1;
+                break;
+            }
+            temp = temp->next;
+        }
+        if(flag == 0)
+        {
+            //说明是最大的所以没插，作尾插
+            temp->next = ap;
+            ap->next = NULL;
+        }
+        flag = 0;
+    }
     return 0;
 }
