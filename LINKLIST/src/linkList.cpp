@@ -42,7 +42,6 @@ int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data)
 
     return 0;
 }
-
 //计算len的长度
 int get_len_linklist(lklst_ptr_node L)
 {
