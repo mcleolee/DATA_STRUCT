@@ -52,7 +52,10 @@ int insert_linklist(lklst_ptr_node L, int pos, linklist_data_t data);
 int get_length_linklist(lklst_ptr_node L);
 
 //根据’位置‘删除
-int delete_linklist(lklst_ptr_node L,int pos);
+int delete_based_address_linklist(lklst_ptr_node L,int pos);
+
+//根据’值‘删除
+int delete_based_value_linklist(lklst_ptr_node L,linklist_data_t DLTdata);
 
 //判空
 int empty_linklist(lklst_ptr_node L);

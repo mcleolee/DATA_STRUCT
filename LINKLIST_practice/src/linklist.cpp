@@ -69,15 +69,13 @@ int empty_linklist(lklst_ptr_node L)
 
 int delete_based_value_linklist(lklst_ptr_node L,linklist_data_t DLTdata)
 {
-
+    //先不写 ：）
 }
 
-int delete_linklist(lklst_ptr_node L,int pos)
+int delete_based_address_linklist(lklst_ptr_node L,int pos)
 {
     
 }
-
-
 
 int show_linklist(lklst_ptr_node L)
 {
@@ -97,5 +95,11 @@ int show_linklist(lklst_ptr_node L)
     
 }
 
+
+//根据值修改
+//摧毁
+//清空
+//逆序
+//排序
 
 

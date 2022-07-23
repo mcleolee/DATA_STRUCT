@@ -19,7 +19,7 @@ int main()
 
 
     puts("---------------delete pos = 2--------");
-    delete_linklist(H,2);
+    delete_based_address_linklist(H,2);
     show_linklist(H);
 
     puts("---------------change data= 3 new='A'--------");
