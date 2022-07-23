@@ -1,3 +1,9 @@
-#ifndef _FUN_H
-void fun();
+#ifndef _STACK_H
+#define _STACK_H
+
+typr
+
+
+
+
 #endif
