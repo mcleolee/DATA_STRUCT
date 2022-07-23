@@ -55,7 +55,7 @@ int get_length_linklist(lklst_ptr_node L)
     return len;
 }
 
-//判空
+//判空,只有头节点就为空
 int empty_linklist(lklst_ptr_node L)
 {
     if(NULL == L->next)
@@ -106,8 +106,8 @@ int show_linklist(lklst_ptr_node L)
     //浅浅判空
     if(0 == empty_linklist(L))
     {
-        printf("L is empty\n");
-        return -1;
+        printf("L is on the end of the list\n");
+        return -2;
     }
     
     //遍历打印数组

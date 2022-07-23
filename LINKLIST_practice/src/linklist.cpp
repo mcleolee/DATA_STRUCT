@@ -72,9 +72,30 @@ int delete_based_value_linklist(lklst_ptr_node L,linklist_data_t DLTdata)
 
 }
 
-int show_linklist(lklst_ptr_node L)
+int delete_linklist(lklst_ptr_node L,int pos)
 {
     
 }
+
+
+
+int show_linklist(lklst_ptr_node L)
+{
+    if(0 == empty_linklist(L))
+    {
+        printf("L is on the end of the list\n");
+        return -2;
+    }
+
+    while (L->next)
+    {
+        printf("%c ",L->next->data);
+        L = L->next;
+    }
+    printf("\n");
+    return 0;
+    
+}
+
 
 
