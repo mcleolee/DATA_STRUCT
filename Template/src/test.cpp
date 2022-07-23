@@ -1,7 +1,7 @@
-#include <iostream>
-#include "fun.h"
-int main(int argc, char *argv[])
+#include ".h"
+#include <stdio.h>
+
+int main()
 {
-    std::cout << "Hello world!" << std::endl;
-    fun();
+    
 }

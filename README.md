@@ -7,7 +7,7 @@
   
 - LINK_LIST 链表
 - LINKED_STACK 链栈
-- LINKED_QUEUE 链队列
+- LINKED_QUEUE 链式队列
 
 
 哥们做这个真的有点猪脑过载

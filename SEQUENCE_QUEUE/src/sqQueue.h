@@ -3,21 +3,24 @@
 
 #define N 1024
 
-typedef char sqq_data_type;
+typedef char sqqueue_data_type;
 typedef struct sqQueue
 {
-    sqq_data_type arrData[N];
-    sqq_data_type data;
-    struct sqQueue *front;
-    struct sqQueue *rear;
+    sqqueue_data_type arrData[N];
+    int front;
+    int rear;
 }sqq_node,*sqq_ptr_node;
 
-sqq_data_type init_sqQueue(sqq_ptr_node L);
+sqqueue_data_type create_sqQueue();
 
+//入队&出队
+int enter_queue(sqq_ptr_node Q,sqqueue_data_type data);
+sqqueue_data_type exit_queue(sqq_ptr_node Q);
 
+//判空&判满
+int empty_sqqueue(sqq_ptr_node Q);
+int full_sqqueue(sqq_ptr_node Q);
 
-
-
-
+int show_sqqueue(sqq_ptr_node Q);
 
 #endif
