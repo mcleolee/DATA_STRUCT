@@ -5,6 +5,20 @@
         "iosfwd": "cpp",
         "iostream": "cpp",
         "istream": "cpp",
-        "ostream": "cpp"
-    }
+        "ostream": "cpp",
+        "exception": "cpp",
+        "ios": "cpp",
+        "iterator": "cpp",
+        "limits": "cpp",
+        "memory": "cpp",
+        "stdexcept": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp",
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "xstddef": "cpp",
+        "xutility": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }
