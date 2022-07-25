@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "linkedStack.h"
-#include <stdlib.h>
+// #include <stdlib.h>
 
 int main() {
     lkstk_node q, *S;
