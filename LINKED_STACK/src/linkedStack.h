@@ -1,11 +1,10 @@
 #ifndef _LINKEDSTACK_H
 #define _LINKEDSTACK_H
 
-#define initSize 10
+#define initSize 1024
+#define StackIncrement 128
 
-
-
-typedef char lkstk_data_type;
+typedef int lkstk_data_type; // turn into char
 typedef struct linkedStack
 {
     // lkstk_data_type data;
@@ -22,7 +21,7 @@ int empty_stack(lkstk_ptr_node S);
 
 int length_stack(lkstk_ptr_node S);
 
-int get_top_stack(lkstk_ptr_node S,lkstk_data_type *data);
+int get_top_stack(lkstk_ptr_node S,lkstk_ptr_node data);
 
 int push_stack(lkstk_ptr_node S,lkstk_data_type data);
 
