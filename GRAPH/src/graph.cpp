@@ -48,6 +48,7 @@ sqg_pnode create_sqg()
                 G->e_buf[i][j] = 69;
             }
         }
+        
     }
 
     printf("plz input E_number\n");
@@ -62,18 +63,34 @@ sqg_pnode create_sqg()
         G->e_buf[A][B]= weight; // 有向只要这一句，如果无向的就要下面那一句
         // G->e_buf[A][B]= weight;
     }
+    return G;
 }
 
 int show_graph(sqg_pnode G)
 {
-    
+    printf("V data is \n");
+    for(int i=0;i<G->v_number;i++)
+    {
+        printf("%c ",G->v_buf[i]);
+    }
+    printf("\n");
+    printf("E data is \n");
+    for(int i=0;i<G->v_number;i++)
+    {
+        for(int j=0;j<G->v_number;j++)
+        {
+            printf("%d ",G->e_buf[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
 }
 
 int main()
 {
     printf("init!\n");
     sqg_pnode G = create_sqg();
-
+    show_graph(G);
     return 0;
 }
 
