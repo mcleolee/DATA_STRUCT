@@ -16,7 +16,7 @@ int get_length_linklist(lklst_ptr_node L);
 
 int delete_based_value_linklist(lklst_ptr_node L,linklist_data_t DLTdata);
 
-int delete_based_address_linklistt(lklst_ptr_node L,int pos);
+int delete_based_address_linklist(lklst_ptr_node L,int pos);
 
 int empty_linklist(lklst_ptr_node L);
 

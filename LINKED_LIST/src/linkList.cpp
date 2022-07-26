@@ -83,7 +83,7 @@ int delete_based_address_linklist(lklst_ptr_node L,int pos)
         printf("L is empty\n");
         return -1;
     }
-    if(0 > pos || get_length_linklist(L) <= pos)
+    if(0 > pos || get_length_linklist(L) <= pos) // why >=
     {
         printf("position is default\n");
         return -1;
