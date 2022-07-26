@@ -43,7 +43,7 @@ int show_sqtree(sqt_ptr_node T)
 {
     for(int i=0; i<T->len; i++)
     {
-        printf("buf[%d]=%c",i,T->buf[i]);
+        printf("buf[%d]=%c\n",i,T->buf[i]);
     }
     printf("\n");
 }
