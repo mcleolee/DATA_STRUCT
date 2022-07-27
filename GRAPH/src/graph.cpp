@@ -61,7 +61,7 @@ sqg_pnode create_sqg()
         scanf("%d%d%d",&A,&B,&weight);
 
         G->e_buf[A][B]= weight; // 有向只要这一句，如果无向的就要下面那一句
-        // G->e_buf[A][B]= weight;
+        // G->e_buf[B][A]= weight;
     }
     return G;
 }
