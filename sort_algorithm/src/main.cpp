@@ -23,4 +23,7 @@ int main()
 
     shell_sort(arr,5);
     show(arr,5);
+
+    quick_sort(arr,arr+4);
+    show(arr,5);
 }

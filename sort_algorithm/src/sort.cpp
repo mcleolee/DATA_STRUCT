@@ -79,12 +79,28 @@ void shell_sort(int *arr, int len)
 void quick_sort(int *start,int *end)
 {
     if(end <= start)
-        return;
-    
-    while(end > start)
     {
-        
+        printf("\n+++ quick sort complete +++\n\n");
+        return; 
     }
+        
+    int base = *start; // 基准值
+    int *l = start, *r = end;
+    while(r > l)
+    {
+        while((l < r) && (*r >= base))
+            r--;
+
+        while((l < r) && (*r <= base))
+            l++;
+
+        swap(l,r);
+    }
+    swap(start,l);
+
+    quick_sort(start,l-1);
+    quick_sort(l+1,end);
+  
 }
 
 
