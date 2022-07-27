@@ -11,7 +11,7 @@ typedef struct sqQueue
     int rear;
 }sqq_node,*sqq_ptr_node;
 
-sqqueue_data_type create_sqQueue();
+sqq_ptr_node create_sqQueue();
 
 //入队&出队
 int enter_queue(sqq_ptr_node Q,sqqueue_data_type data);
