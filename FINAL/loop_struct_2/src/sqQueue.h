@@ -23,4 +23,6 @@ int full_sqqueue(sqq_ptr_node Q);
 
 int show_sqqueue(sqq_ptr_node Q);
 
+int get_length_sqQueue(sqq_ptr_node Q);
+
 #endif

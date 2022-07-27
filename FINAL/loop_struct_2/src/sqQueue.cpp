@@ -56,9 +56,10 @@ int empty_sqqueue(sqq_ptr_node Q)
         return -1;
     }
 }
+
 int full_sqqueue(sqq_ptr_node Q)
 {
-    if((Q->rear + 1)%N == Q->front)
+    if((Q->rear + 1)% N == Q->front)
     {
         return 0;
     }
@@ -84,4 +85,26 @@ int show_sqqueue(sqq_ptr_node Q)
 	printf("\n");
 	
 	return 0;
+}
+
+int get_length_sqQueue(sqq_ptr_node Q)
+{
+    if(0 == empty_sqqueue(Q))
+    {
+        printf("the queue is empty\n");
+        return -1;
+    }
+    else if (0 == full_sqqueue(Q))
+    {
+        printf("the queue is full\n");
+        return -2;
+    }
+
+    int len = 1;
+    while(Q->front != Q->rear)
+    {
+        len++;
+        Q->front++;
+    }
+    return len;
 }
