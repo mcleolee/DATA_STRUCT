@@ -2,23 +2,6 @@
 #include <string.h>
 #include "sort.h"
 
-void swap(int *p, int *q)
-{
-    int temp;
-    temp = *p;
-    *p = *q;
-    *q = temp;
-}
-
-void show(int *arr, int len)
-{
-    for (int i = 0; i < len; i++)
-    {
-        printf("arr[%d]=%d", i, arr[i]);
-    }
-    puts("");
-}
-
 void selection_sort(int *arr, int len)
 {
     for (int i = 0; i < len - 1; i++)
@@ -36,6 +19,8 @@ void selection_sort(int *arr, int len)
             swap(arr + i, arr + min);
         }
     }
+
+    printf("\n+++ selection sort complete +++\n\n");
 }
 
 void insert_sort(int *arr, int len)
@@ -59,6 +44,7 @@ void insert_sort(int *arr, int len)
         }
         arr[end + 1] = temp;
     }
+    printf("\n+++ insert sort complete +++\n\n");
 }
 
 void shell_sort(int *arr, int len)
@@ -85,5 +71,44 @@ void shell_sort(int *arr, int len)
             }
             arr[end + w] = temp;
         }
+        w/= 2;
+    }
+    printf("\n+++ shell sort complete +++\n\n");
+}
+
+void quick_sort(int *start,int *end)
+{
+    if(end <= start)
+        return;
+    
+    while(end > start)
+    {
+        
     }
 }
+
+
+
+
+void swap(int *p, int *q)
+{
+    int temp;
+    temp = *p;
+    *p = *q;
+    *q = temp;
+}
+
+void show(int *arr, int len)
+{
+    for (int i = 0; i < len; i++)
+    {
+        printf("arr[%d]=%d\n", i, arr[i]);
+    }
+    printf("\n");
+}
+
+// int get_length(int arr)
+// {
+//     int len = sizeof(arr) / sizeof(arr[0]);
+//     return len;
+// }
