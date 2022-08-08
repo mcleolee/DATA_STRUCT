@@ -74,7 +74,7 @@ int delete_based_value_linkedList(lkdlst_ptr_node LL,linkedList_data_type DLTdat
 int change_linkedList(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList_data_type NEWdata);
 
 //摧毁
-int destory_linkedList(lkdlst_ptr_node LL);
+int destory_linkedList(lkdlst_ptr_node *LL);
 
 //清空
 int clean_linkedList(lkdlst_ptr_node LL);

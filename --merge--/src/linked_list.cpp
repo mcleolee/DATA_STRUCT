@@ -164,10 +164,42 @@ int change_linkedList(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList
 }
 
 //摧毁
-int destory_linkedList(lkdlst_ptr_node LL);
+int destory_linkedList(lkdlst_ptr_node *LL)
+{
+    if(0 == empty_linkedList(*LL))
+    {
+        free(*LL);
+        return 0;
+    }
+
+    clean_linkedList(*LL);
+    // puts("phase 1");
+    free(*LL);
+    *LL = NULL;
+    // puts("phase 2");
+
+    return 0;
+}
 
 //清空
-int clean_linkedList(lkdlst_ptr_node LL);
+int clean_linkedList(lkdlst_ptr_node LL)
+{
+    if(0 == empty_linkedList(LL))
+    {
+        printf("error:This linked list is empty.\n");
+        return -1;
+    }
+    lkdlst_ptr_node p = LL;
+    lkdlst_ptr_node temp = LL->next;
+    while(temp)
+    {
+        LL = temp;
+        temp = LL->next;
+        free(LL);
+    }
+    LL->next = NULL;
+    return 0;
+}
 
 //逆序
 int reversed_order_linkedList(lkdlst_ptr_node LL);

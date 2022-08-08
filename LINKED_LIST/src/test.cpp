@@ -18,25 +18,26 @@ int main()
     show_linklist(H);
 
 
-    puts("---------------delete pos = 2--------");
-    delete_based_address_linklist(H,2);
-    show_linklist(H);
+    // puts("---------------delete pos = 2--------");
+    // delete_based_address_linklist(H,2);
+    // show_linklist(H);
 
-    puts("---------------change data= 3 new='A'--------");
-    change_linklist(H,'3','A');
-    show_linklist(H);
+    // puts("---------------change data= 3 new='A'--------");
+    // change_linklist(H,'3','A');
+    // show_linklist(H);
 
-    //逆序
-    puts("------------- reversed order-------------");
-    reversed_order_linklist(H);
-    show_linklist(H);
+    // //逆序
+    // puts("------------- reversed order-------------");
+    // reversed_order_linklist(H);
+    // show_linklist(H);
     
-    puts("------------- sort-------------");
-    sort_linklist(H);
-    show_linklist(H);
+    // puts("------------- sort-------------");
+    // sort_linklist(H);
+    // show_linklist(H);
 
-    // puts("---------------clean----------");
-    // clean_linklist(H);
+    puts("---------------clean----------");
+    clean_linklist(H);
+    show_linklist(H);
 
     // puts("---------------destory----------");
     // destory_linklist(&H);

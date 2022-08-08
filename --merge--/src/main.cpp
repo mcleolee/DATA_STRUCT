@@ -21,6 +21,8 @@ int linkedList()
     printf("2. Insert new datas into the linked list\n");
     printf("3. Delete data from the linked list\n");
     printf("4. Change data from the linked list\n");
+    printf("5. Destory the whole linked list\n");
+    printf("6. Clean the whole linked list\n");
     printf("");
     printf("");
     printf("\n");
@@ -157,7 +159,7 @@ int linkedList()
         // change_linkedList(H,'2','9');
         print_linkedList(H);
 
-        printf("the return value os change_linkedList is %d\n",change_linkedList(H,OLDdata,NEWdata));
+        printf("the return value of change_linkedList is %d\n",change_linkedList(H,OLDdata,NEWdata));
         pauseAndClear();
         
         
@@ -166,12 +168,35 @@ int linkedList()
         
 
     case 5:
-        printf("");
+    {
+        printf("Destorying the whole linked list\n");
+        destory_linkedList(&H);
+        Sleep(400);
+        printf("Destory success\n");
+        printf("\nThe linked list is \n\t");
+        print_linkedList(H);
+
+        pauseAndClear();
         break;
+    }
+        
 
     case 6:
-        printf("");
+    {
+        printf("Cleaning the whole linked list\n");
+        clean_linkedList(H);
+        Sleep(400);
+        printf("Clean success\n");
+        printf("\nThe linked list is \n");
+        Sleep(400);
+        // 一打印直接出事
+        // int ret = print_linkedList(H);
+        // printf("\nThe return value of print_linkedList is %d\n",ret);
+        // print_linkedList(H);
+        pauseAndClear();
         break;
+    }
+        
     
     case 7:
         printf("");
