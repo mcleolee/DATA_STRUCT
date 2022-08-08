@@ -19,7 +19,7 @@ int linkedList()
     printf("1. Create a new node for this linked list\n");
     printf("2. Insert new datas into the linked list\n");
     printf("3. Delete data from the linked list\n");
-    printf("");
+    printf("4. Change data from the linked list\n");
     printf("");
     printf("");
     printf("\n");
@@ -77,7 +77,7 @@ int linkedList()
 
             scanf("%d", &ISTnum);
 
-            Sleep(1200);
+            Sleep(800);
             for (int i = 0; i < ISTnum; i++)
             {
                 insert_linkedList(H, i, i + 48);
@@ -140,10 +140,19 @@ int linkedList()
         break;
     }
         
-
     case 4:
-        printf("");
+    {
+        printf("Changing data from the linked list\n");
+        printf("Replace the old data with a new data\n");
+        printf("(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList_data_type NEWdata)\n");
+        
+        
+        
+        
+        
         break;
+    }
+        
 
     case 5:
         printf("");

@@ -63,11 +63,15 @@ int print_linkedList(lkdlst_ptr_node LL);
 // 判空,只有头节点就为空
 int empty_linkedList(lkdlst_ptr_node LL);
 
-// 删除
+// 根据'位置'删除
 int delete_based_address_linkedList(lkdlst_ptr_node LL,int pos);
 
+// 根据’值‘删除
+// 未写
+int delete_based_value_linkedList(lkdlst_ptr_node LL,linkedList_data_type DLTdata);
 
-
+// 根据值修改
+int change_linkedList(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList_data_type NEWdata);
 
 
 

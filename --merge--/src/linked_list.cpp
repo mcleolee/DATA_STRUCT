@@ -54,7 +54,7 @@ int print_linkedList(lkdlst_ptr_node LL)
     {
         printf("error:This linked list is empty.\n");
         printf("LL is on the end of the list\n");
-        return -2;
+        return -1;
     }
     
     //遍历打印数组
@@ -66,7 +66,6 @@ int print_linkedList(lkdlst_ptr_node LL)
     printf("\n");
     return 0;
 }
-
 
 // 插入
 int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)
@@ -115,7 +114,7 @@ int delete_based_address_linkedList(lkdlst_ptr_node LL, int pos)
     }
 
     //找到要删除的前一个node的地址
-    for(int i=0;i<pos;i++)
+    for(int i=0;i<pos-1;i++)
     {
         LL = LL->next;
     }
@@ -129,6 +128,41 @@ int delete_based_address_linkedList(lkdlst_ptr_node LL, int pos)
     free(temp);
     return 0;
 }
+
+// 根据值修改
+int change_linkedList(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList_data_type NEWdata)
+{
+    //浅浅判空
+    if(0 == empty_linkedList(LL))
+    {
+        printf("error:This linked list is empty.\n");
+        printf("LL is on the end of the list\n");
+        return -1;
+    }
+
+    int flag = 0;
+    while(LL->next)
+    {
+        if(OLDdata == LL->next->data)
+        {
+            flag = 1;
+            break; // 跳出来的时候指的是前一个
+        }
+        LL = LL->next;
+    }
+
+    if(1 == flag)
+    {
+        LL->data = NEWdata;
+    }
+    else
+    {
+        printf("error:No data find.\n");
+        return -2;
+    }
+    return 0;
+}
+
 
 
 
