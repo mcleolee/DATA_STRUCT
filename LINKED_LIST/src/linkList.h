@@ -17,8 +17,6 @@ typedef struct linklist
 //     linklist_data_t data;
 //     lklst_ptr_node *next;
 // };
-
-
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //创建头节点
 //作用：统一插入操作时的代码
