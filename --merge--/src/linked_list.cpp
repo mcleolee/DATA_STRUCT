@@ -75,7 +75,7 @@ int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)
     //判断 pos 是否合法
     if(0 > pos || pos > len)
     {
-        printf("The position you ask is fatal\n");
+        printf("Fatal:The position you ask is wrong\n");
         return -1;
     }
     //让LL到pos前，这样新节点就在LL和LL->next之间

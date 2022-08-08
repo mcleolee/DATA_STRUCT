@@ -56,8 +56,8 @@ int menu_linkedList()
     case 2:
     {
         int input_menu_insert_linkedlist = 0;
+        system("cls");
         printf("Inserting new datas into the linked list\n");
-
         printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
         printf("1. Insert from the start of the linked list.\n");
         printf("2. Insert to a position you want. \n");
@@ -65,27 +65,59 @@ int menu_linkedList()
 
         scanf("%d",&input_menu_insert_linkedlist);
         printf("\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
-
-
-        printf("This is a test,inserting 0 1 2 3 4\n");
-        printf("Only input numbers, \nif you enter 5, you'llget 0 1 2 3 4\n");
-        printf("\nInput the ISTnum\n");
-
-        scanf("%d",&ISTnum);
-
-        Sleep(1200);
-        for (int i = 0; i < ISTnum; i++)
+        switch (input_menu_insert_linkedlist)
         {
-            insert_linkedList(H, i, i + 48);
-        }
-        printf("\nThe linked list is \n\t");
-        print_linkedList(H);
-        Sleep(300);
-        pauseAndClear();
+        // Insert from the start of the linked list.
+        case 1:
+        {
+            printf("This is a test,inserting 0 1 2 3 4\n");
+            printf("Only input numbers, \nif you enter 5, you'llget 0 1 2 3 4\n");
+            printf("\nInput the number\n");
 
-        // 在返回菜单的时候显示 linked list
-        // printf("\nThe linked list is \n\t");
-        // print_linkedList(H);
+            scanf("%d", &ISTnum);
+
+            Sleep(1200);
+            for (int i = 0; i < ISTnum; i++)
+            {
+                insert_linkedList(H, i, i + 48);
+            }
+            printf("\nThe linked list is \n\t");
+            print_linkedList(H);
+            Sleep(300);
+            pauseAndClear();
+
+            // 在返回菜单的时候显示 linked list
+            // printf("\nThe linked list is \n\t");
+            // print_linkedList(H);
+            break;
+        }
+
+        // Insert to a position you want.
+        case 2:
+        {
+            int pos_menu_linkedList = 0;
+            linkedList_data_type ISTdata;
+
+            printf("Inserting to a position you want. \n");
+            printf("Input a string will get an error\n");
+            printf("(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)\n");
+            printf("2 parameters\n1. position\n2. data\n\n");
+            printf("Enter position\n");
+            scanf("%d",&pos_menu_linkedList);
+            printf("Enter data\n");
+            scanf("%s",&ISTdata);
+
+            insert_linkedList(H, pos_menu_linkedList, ISTdata);
+            printf("\nThe linked list is \n\t");
+            print_linkedList(H);
+            pauseAndClear();
+        }
+            break;
+        
+        default:
+        printf("Wrong selection\n");
+            break;
+        }
 
         break;
     }
@@ -130,6 +162,7 @@ int menu_linkedList()
 
 int main()
 {
+    system("cls");
     // lkdlst_ptr_node H;
     menu_linkedList();
     return 0;
