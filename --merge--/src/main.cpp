@@ -8,6 +8,9 @@
 int menu_linkedList()
 {
     lkdlst_ptr_node H;
+    int ISTnum = 0;
+
+
     while(1)
     {
     int input_menu_linkedlist;
@@ -31,7 +34,7 @@ int menu_linkedList()
     case 1:
     {
         printf("Creating a new node for this linked list\n");
-        Sleep(1000);
+        // Sleep(1000);
         H = create_linkedList();
         if(H != NULL)
         {
@@ -44,26 +47,49 @@ int menu_linkedList()
             system("pause");
             break;
         }
-        
-        // print_linkedList(H);
-		Sleep(1000);
+        // 好像不能这里打印
+		// Sleep(300);
         pauseAndClear();
         break;
     }
     
     case 2:
+    {
+        int input_menu_insert_linkedlist = 0;
         printf("Inserting new datas into the linked list\n");
+
+        printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+        printf("1. Insert from the start of the linked list.\n");
+        printf("2. Insert to a position you want. \n");
+        printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+
+        scanf("%d",&input_menu_insert_linkedlist);
+        printf("\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+
+
         printf("This is a test,inserting 0 1 2 3 4\n");
-        Sleep(1500);
-        for(int i=0;i<5;i++)
-            {
-                insert_linkedList(H,i,i+48);
-            }
-        // scanf("")
-        printf("\nThe linked list is ");
+        printf("Only input numbers, \nif you enter 5, you'llget 0 1 2 3 4\n");
+        printf("\nInput the ISTnum\n");
+
+        scanf("%d",&ISTnum);
+
+        Sleep(1200);
+        for (int i = 0; i < ISTnum; i++)
+        {
+            insert_linkedList(H, i, i + 48);
+        }
+        printf("\nThe linked list is \n\t");
         print_linkedList(H);
+        Sleep(300);
         pauseAndClear();
+
+        // 在返回菜单的时候显示 linked list
+        // printf("\nThe linked list is \n\t");
+        // print_linkedList(H);
+
         break;
+    }
+        
 
     case 3:
         printf("");
