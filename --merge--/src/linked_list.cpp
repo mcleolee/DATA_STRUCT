@@ -52,6 +52,7 @@ int print_linkedList(lkdlst_ptr_node LL)
     //浅浅判空
     if(0 == empty_linkedList(LL))
     {
+        printf("error:This linked list is empty.\n");
         printf("LL is on the end of the list\n");
         return -2;
     }
@@ -67,7 +68,7 @@ int print_linkedList(lkdlst_ptr_node LL)
 }
 
 
-
+// 插入
 int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)
 {
     int len = get_length_linkedList(LL);
@@ -75,7 +76,7 @@ int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)
     //判断 pos 是否合法
     if(0 > pos || pos > len)
     {
-        printf("Fatal:The position you ask is wrong\n");
+        perror("Fatal:The position you ask is wrong\n");
         return -1;
     }
     //让LL到pos前，这样新节点就在LL和LL->next之间
@@ -96,3 +97,38 @@ int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)
     return 0;
 
 }
+
+// 删除
+int delete_based_address_linkedList(lkdlst_ptr_node LL, int pos)
+{
+    if(0 == empty_linkedList(LL))
+    {
+        printf("error: This linked list is empty.\n");
+        return -1;
+    }
+
+    // position 要是比表还长肯定逆天
+    if(pos < 0 || get_length_linkedList(LL) <= pos)
+    {
+        printf("error: bad position.\n");
+        return -2;
+    }
+
+    //找到要删除的前一个node的地址
+    for(int i=0;i<pos;i++)
+    {
+        LL = LL->next;
+    }
+
+    //保存要删除的node地址
+    lkdlst_ptr_node temp = LL->next;
+    //连线
+    LL->next = temp->next;
+
+    //释放空间
+    free(temp);
+    return 0;
+}
+
+
+

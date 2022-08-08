@@ -15,6 +15,7 @@ lklst_ptr_node create_linklist(void)
     return L;
 }
 
+// insert
 int insert_linklist(lklst_ptr_node L,int pos,linklist_data_t ISTdata)
 {
     int len = get_length_linklist(L);
@@ -43,6 +44,7 @@ int insert_linklist(lklst_ptr_node L,int pos,linklist_data_t ISTdata)
     return 0;
 
 }
+
 //计算len的长度
 int get_length_linklist(lklst_ptr_node L)
 {

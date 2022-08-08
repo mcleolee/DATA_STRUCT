@@ -5,25 +5,25 @@
 #include "link.h"
 #include "general.h"
 
-int menu_linkedList()
+int linkedList()
 {
     lkdlst_ptr_node H;
     int ISTnum = 0;
+    int input_menu_linkedlist = -1;
 
-
-    while(1)
+    while(input_menu_linkedlist)
     {
-    int input_menu_linkedlist;
     printf("\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
     printf("\tLINKED LIST MENU\n");
     printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
     printf("1. Create a new node for this linked list\n");
     printf("2. Insert new datas into the linked list\n");
+    printf("3. Delete data from the linked list\n");
     printf("");
     printf("");
     printf("");
-    printf("");
-    printf("");
+    printf("\n");
+    printf("0. Exit\n");
     printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\n");
 
     scanf("%d",&input_menu_linkedlist);
@@ -34,7 +34,7 @@ int menu_linkedList()
     case 1:
     {
         printf("Creating a new node for this linked list\n");
-        // Sleep(1000);
+        Sleep(600);
         H = create_linkedList();
         if(H != NULL)
         {
@@ -48,7 +48,7 @@ int menu_linkedList()
             break;
         }
         // 好像不能这里打印
-		// Sleep(300);
+		Sleep(300);
         pauseAndClear();
         break;
     }
@@ -65,6 +65,7 @@ int menu_linkedList()
 
         scanf("%d",&input_menu_insert_linkedlist);
         printf("\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+
         switch (input_menu_insert_linkedlist)
         {
         // Insert from the start of the linked list.
@@ -122,10 +123,23 @@ int menu_linkedList()
         break;
     }
         
-
     case 3:
-        printf("");
+    {
+        int input_menu_delete_linkedList = 0;
+        printf("Deleting data from the linked list\n");
+        printf("(lkdlst_ptr_node LL, int pos)\n");
+        printf("\nInput the position you want to delete\n");
+
+        scanf("%d",&input_menu_delete_linkedList);
+
+        delete_based_address_linkedList(H,input_menu_delete_linkedList);
+        Sleep(400);
+        print_linkedList(H);
+
+        pauseAndClear();
         break;
+    }
+        
 
     case 4:
         printf("");
@@ -147,15 +161,15 @@ int menu_linkedList()
         printf("");
         break;
 
-    case 9:
-        printf("");
+    case 0: 
+        system("cls");
+        printf("\nExit success.\n\n");
         break;
     
     default:
         printf("Wrong number\n");
         break;
     }
-
     }
     
 }
@@ -164,6 +178,6 @@ int main()
 {
     system("cls");
     // lkdlst_ptr_node H;
-    menu_linkedList();
+    linkedList();
     return 0;
 }

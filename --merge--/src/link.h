@@ -15,18 +15,18 @@ typedef struct linkedList
     struct linkedList *next; // 不能写成lkdlst_ptr_node *next!!!
 }lkdlst_node,*lkdlst_ptr_node;
 
-//也可以
+// 也可以
 // typedef struct linklist lklst_node;
 // typedef struct linklist* lklst_ptr_node;
 // struct linklist{
 //     linklist_data_t data;
 //     lklst_ptr_node *next;
 // };
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//创建头节点
-//作用：统一插入操作时的代码
-//是第一个节点
-//不储存数据
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// 创建头节点
+// 作用：统一插入操作时的代码
+// 是第一个节点
+// 不储存数据
 lkdlst_ptr_node create_linkedList(void);
 
 // 链表比较重要的：插入
@@ -41,29 +41,30 @@ lkdlst_ptr_node create_linkedList(void);
 // 这里指向的顺序很重要
 // 头插：
 // p的next = h的next
-//h的next = p
-//尾插：
-//h的next = p
-//p的next = NULL
-//而h的next == NULL
-//总结：
-//1. 找到插入位置的前一个节点地址
-//2. 插入，先插后边
+// h的next = p
+// 尾插：
+// h的next = p
+// p的next = NULL
+// 而h的next == NULL
+// 总结：
+// 1. 找到插入位置的前一个节点地址
+// 2. 插入，先插后边
 int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type data);
 
 // 量长度
 int get_length_linkedList(lkdlst_ptr_node LL);
 
 // 菜单
-int menu_linkedList();
+int linkedList();
 
 // 打印
 int print_linkedList(lkdlst_ptr_node LL);
 
-// 判空
+// 判空,只有头节点就为空
 int empty_linkedList(lkdlst_ptr_node LL);
 
-
+// 删除
+int delete_based_address_linkedList(lkdlst_ptr_node LL,int pos);
 
 
 
