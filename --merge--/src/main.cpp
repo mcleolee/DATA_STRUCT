@@ -23,7 +23,7 @@ int linkedList()
     printf("4. Change data from the linked list\n");
     printf("5. Destory the whole linked list\n");
     printf("6. Clean the whole linked list\n");
-    printf("");
+    printf("7. Reverse the data in the linked list\n");
     printf("");
     printf("\n");
     printf("0. Exit\n");
@@ -169,6 +169,7 @@ int linkedList()
 
     case 5:
     {
+        // 因为 clean 有问题，所以这个测试都没测试
         printf("Destorying the whole linked list\n");
         destory_linkedList(&H);
         Sleep(400);
@@ -199,8 +200,12 @@ int linkedList()
         
     
     case 7:
+    {
+        printf("7. Reverse the data in the linked list\n");
         printf("");
         break;
+    }
+        
 
     case 8:
         printf("");

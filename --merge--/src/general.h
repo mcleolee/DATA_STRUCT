@@ -10,7 +10,15 @@ int pauseAndClear()
 }
 
 
-
+#if 0
+//判空
+    if(0 == empty_linkedList(LL))
+    {
+        printf("error:This linked list is empty.\n");
+        printf("LL is on the end of the list\n");
+        return -1;
+    }
+#endif
 
 
 

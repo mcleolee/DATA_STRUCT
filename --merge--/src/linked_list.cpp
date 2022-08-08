@@ -202,7 +202,16 @@ int clean_linkedList(lkdlst_ptr_node LL)
 }
 
 //逆序
-int reversed_order_linkedList(lkdlst_ptr_node LL);
+int reversed_order_linkedList(lkdlst_ptr_node LL)
+{
+    //浅浅判空
+    if(0 == empty_linkedList(LL))
+    {
+        printf("error:This linked list is empty.\n");
+        printf("LL is on the end of the list\n");
+        return -1;
+    }
+}
 
 //排序
 int sort_linkedList(lkdlst_ptr_node LL);
