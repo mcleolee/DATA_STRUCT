@@ -49,13 +49,19 @@ lkdlst_ptr_node create_linkedList(void);
 //总结：
 //1. 找到插入位置的前一个节点地址
 //2. 插入，先插后边
-int insert_linkedList(lkdlst_ptr_node L,int pos, linkedList_data_type data);
+int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type data);
+
+// 量长度
+int get_length_linkedList(lkdlst_ptr_node LL);
+
+// 菜单
+int menu_linkedList();
 
 // 打印
-int print_menu_linkedList();
+int print_linkedList(lkdlst_ptr_node LL);
 
-
-
+// 判空
+int empty_linkedList(lkdlst_ptr_node LL);
 
 
 
