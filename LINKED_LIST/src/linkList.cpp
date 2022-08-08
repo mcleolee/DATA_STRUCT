@@ -152,7 +152,7 @@ int change_linklist(lklst_ptr_node L,linklist_data_t old_data,linklist_data_t ne
 
     if(1 == flag)
     {
-        L->data = new_data;
+        L->next->data = new_data;
     }
     else
     {

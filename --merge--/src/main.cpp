@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <windows.h>
+#include <string.h>
 #include <stdlib.h>
 #include <time.h>
 #include "link.h"
@@ -34,7 +35,7 @@ int linkedList()
     case 1:
     {
         printf("Creating a new node for this linked list\n");
-        Sleep(600);
+        Sleep(400);
         H = create_linkedList();
         if(H != NULL)
         {
@@ -101,7 +102,7 @@ int linkedList()
 
             printf("Inserting to a position you want. \n");
             printf("Input a string will get an error\n");
-            printf("(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)\n");
+            // printf("(lkdlst_ptr_node LL,int pos, linkedList_data_type ISTdata)\n");
             printf("2 parameters\n1. position\n2. data\n\n");
             printf("Enter position\n");
             scanf("%d",&pos_menu_linkedList);
@@ -127,7 +128,7 @@ int linkedList()
     {
         int input_menu_delete_linkedList = 0;
         printf("Deleting data from the linked list\n");
-        printf("(lkdlst_ptr_node LL, int pos)\n");
+        // printf("(lkdlst_ptr_node LL, int pos)\n");
         printf("\nInput the position you want to delete\n");
 
         scanf("%d",&input_menu_delete_linkedList);
@@ -142,12 +143,22 @@ int linkedList()
         
     case 4:
     {
+        linkedList_data_type OLDdata,NEWdata;
         printf("Changing data from the linked list\n");
         printf("Replace the old data with a new data\n");
-        printf("(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList_data_type NEWdata)\n");
-        
-        
-        
+        // printf("(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList_data_type NEWdata)\n");
+        printf("\n2 parameters\n1. old data\n2. new data\n\n");
+        printf("Input the old data\n");
+        scanf("%s",&OLDdata);
+        printf("Input the new data\n");
+        scanf("%s",&NEWdata);
+
+        change_linkedList(H,OLDdata,NEWdata);
+        // change_linkedList(H,'2','9');
+        print_linkedList(H);
+
+        printf("the return value os change_linkedList is %d\n",change_linkedList(H,OLDdata,NEWdata));
+        pauseAndClear();
         
         
         break;

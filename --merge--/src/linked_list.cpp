@@ -153,7 +153,7 @@ int change_linkedList(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList
 
     if(1 == flag)
     {
-        LL->data = NEWdata;
+        LL->next->data = NEWdata;
     }
     else
     {
@@ -163,6 +163,16 @@ int change_linkedList(lkdlst_ptr_node LL,linkedList_data_type OLDdata,linkedList
     return 0;
 }
 
+//摧毁
+int destory_linkedList(lkdlst_ptr_node LL);
 
+//清空
+int clean_linkedList(lkdlst_ptr_node LL);
+
+//逆序
+int reversed_order_linkedList(lkdlst_ptr_node LL);
+
+//排序
+int sort_linkedList(lkdlst_ptr_node LL);
 
 
