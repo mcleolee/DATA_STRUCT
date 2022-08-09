@@ -212,6 +212,7 @@ int linkedList()
         
 
     case 8:
+    {
         printf("Sorting the linked list\n");
         Sleep(200);
         sort_linkedList(H);
@@ -219,17 +220,25 @@ int linkedList()
         print_linkedList(H);
         pauseAndClear();
         break;
+    }
+        
 
     case 9:
+    {
         Sleep(50);
         print_linkedList(H);
         pauseAndClear();
         break;
+    }
+        
 
     case 0: 
+    {
         system("cls");
         printf("\nExit success.\n\n");
         break;
+    }
+        
     
     default:
         printf("Wrong number\n");

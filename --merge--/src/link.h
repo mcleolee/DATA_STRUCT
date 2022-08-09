@@ -1,6 +1,9 @@
 #ifndef _LINK_H
 #define _LINK_H
 
+#ifndef _LINKEDLIST_H
+#define _LINKEDLIST_H
+
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //
 //               LINKED LIST
@@ -85,6 +88,19 @@ int reversed_order_linkedList(lkdlst_ptr_node LL);
 //排序
 int sort_linkedList(lkdlst_ptr_node LL);
 
+#endif //end of linked list
+
+#ifndef _LINKQUEUE_H
+#define _LINKQUEUE_H
+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//
+//              LINKED QUEUE
+//
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+
+#endif // end of linked queue
 
 
 
