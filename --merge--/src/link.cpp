@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include "link.h"
 
+#if 1
+
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//
+//                   LIST
+//
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 lkdlst_ptr_node create_linkedList(void)
 {
@@ -281,9 +288,26 @@ int sort_linkedList(lkdlst_ptr_node LL)
         flag = 0;
     }
     return 0;
-
-
-
 }
+#endif // list
+
+#if 1
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+//
+//                  QUEUE
+//
+//-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
 
+
+
+
+
+
+
+
+
+
+
+
+#endif

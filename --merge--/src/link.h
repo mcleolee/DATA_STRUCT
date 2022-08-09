@@ -15,6 +15,12 @@ int linkedList();
 
 typedef char linkedList_data_type;
 
+//     linkedList     |
+//-+-+-+-+-+-+-+|-+-+-+-+-+-+-+//
+//              |              //
+//     data     |    *next     //
+//              |              //
+//-+-+-+-+-+-+-+|-+-+-+-+-+-+-+//
 typedef struct linkedList 
 {
     linkedList_data_type data;
@@ -105,6 +111,30 @@ int linkedQueue();
 // #define N 1024
 typedef char linkedQueue_data_type;
 
+//     node     |
+//-+-+-+-+-+-+-+|-+-+-+-+-+-+-+//
+//              |              //
+//     data     |    *next     //
+//              |              //
+//-+-+-+-+-+-+-+|-+-+-+-+-+-+-+//
+typedef struct node
+{
+    linkedQueue_data_type data;
+    struct node *next;
+}node,*ptr_node;
+
+//指向首尾的两个指针
+//     linkedQueue     |
+//-+-+-+-+-+-+-+|-+-+-+-+-+-+-+//
+//              |              //
+//    *front    |    *rear     //
+//              |              //
+//-+-+-+-+-+-+-+|-+-+-+-+-+-+-+//
+typedef struct linkedQueue
+{
+    ptr_node front;
+    ptr_node rear;
+}lkdq_node,*lkdq_ptr_node;
 
 
 
