@@ -4,6 +4,9 @@
 #ifndef _LINKEDLIST_H
 #define _LINKEDLIST_H
 
+// 菜单
+int linkedList();
+
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //
 //               LINKED LIST
@@ -57,9 +60,6 @@ int insert_linkedList(lkdlst_ptr_node LL,int pos, linkedList_data_type data);
 // 量长度
 int get_length_linkedList(lkdlst_ptr_node LL);
 
-// 菜单
-int linkedList();
-
 // 打印
 int print_linkedList(lkdlst_ptr_node LL);
 
@@ -88,10 +88,13 @@ int reversed_order_linkedList(lkdlst_ptr_node LL);
 //排序
 int sort_linkedList(lkdlst_ptr_node LL);
 
-#endif //end of linked list
+#endif // LINKED LIST
 
 #ifndef _LINKEDQUEUE_H
 #define _LINKEDQUEUE_H
+
+// menu
+int linkedQueue();
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //
@@ -109,7 +112,7 @@ typedef char linkedQueue_data_type;
 
 
 
-#endif // end of linked queue
+#endif // LINKED QUEUE
 
 
 
