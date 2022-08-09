@@ -90,14 +90,23 @@ int sort_linkedList(lkdlst_ptr_node LL);
 
 #endif //end of linked list
 
-#ifndef _LINKQUEUE_H
-#define _LINKQUEUE_H
+#ifndef _LINKEDQUEUE_H
+#define _LINKEDQUEUE_H
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 //
 //              LINKED QUEUE
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+// #define N 1024
+typedef char linkedQueue_data_type;
+
+
+
+
+
+
 
 
 #endif // end of linked queue
