@@ -5,6 +5,7 @@
 
 int pauseAndClear()
 {
+    printf("\n");
     system("pause");
 	system("cls");
 }

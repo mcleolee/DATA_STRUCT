@@ -56,7 +56,7 @@ int print_linkedList(lkdlst_ptr_node LL)
         printf("LL is on the end of the list\n");
         return -1;
     }
-    
+    printf("\nThe linked list is \n\t");
     //遍历打印数组
     while(LL->next) //L不能移动到最后一个，不然L->next就是NULL，会段错误
     {
@@ -204,16 +204,86 @@ int clean_linkedList(lkdlst_ptr_node LL)
 //逆序
 int reversed_order_linkedList(lkdlst_ptr_node LL)
 {
-    //浅浅判空
+    //判空
     if(0 == empty_linkedList(LL))
     {
         printf("error:This linked list is empty.\n");
         printf("LL is on the end of the list\n");
         return -1;
     }
+
+    //分成两个链表
+    lkdlst_ptr_node p = LL->next;
+    lkdlst_ptr_node ap = p; // ap meaning after p?
+    LL->next = NULL;
+
+    //把 p 指向的链表依次对 LL 指向的链表做头插
+    while(p)
+    {
+        //向后移一位
+        ap = p;
+        p = p->next;
+        
+        //再做头插
+        ap->next = LL->next;
+        LL->next = ap;
+    }
+
+
+
 }
 
 //排序
-int sort_linkedList(lkdlst_ptr_node LL);
+int sort_linkedList(lkdlst_ptr_node LL)
+{
+    //判空
+    if(0 == empty_linkedList(LL))
+    {
+        printf("error:This linked list is empty.\n");
+        printf("LL is on the end of the list\n");
+        return -1;
+    }
+    //分成两个链表
+    lkdlst_ptr_node p = LL->next;
+    lkdlst_ptr_node ap = p;
+    lkdlst_ptr_node temp = LL;
+
+    int flag = 0;
+
+    LL->next = NULL;
+
+    //把 p 指向的链表依次对 LL 指向的链表做头插
+    while(p)
+    {
+        //向后移一位
+        ap = p;
+        p = p->next;
+
+        //有序插入
+        temp = LL;
+        while(temp->next)
+        {
+            if(temp->next->data > ap->data)
+            {
+                ap->next = temp->next;
+                temp->next = ap;
+                flag = 1;
+                break;
+            }
+            temp = temp->next;
+        }
+        if(flag == 0)
+        {
+            //说明是最大的所以没插，作尾插
+            temp->next = ap;
+            ap->next = NULL;
+        }
+        flag = 0;
+    }
+    return 0;
+
+
+
+}
 
 

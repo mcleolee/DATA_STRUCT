@@ -24,7 +24,8 @@ int linkedList()
     printf("5. Destory the whole linked list\n");
     printf("6. Clean the whole linked list\n");
     printf("7. Reverse the data in the linked list\n");
-    printf("");
+    printf("8. Sort the linked list from small to large\n");
+    printf("9. Print the linked list now\n");
     printf("\n");
     printf("0. Exit\n");
     printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\n");
@@ -85,7 +86,7 @@ int linkedList()
             {
                 insert_linkedList(H, i, i + 48);
             }
-            printf("\nThe linked list is \n\t");
+            // printf("\nThe linked list is \n\t");
             print_linkedList(H);
             Sleep(300);
             pauseAndClear();
@@ -112,7 +113,7 @@ int linkedList()
             scanf("%s",&ISTdata);
 
             insert_linkedList(H, pos_menu_linkedList, ISTdata);
-            printf("\nThe linked list is \n\t");
+            // printf("\nThe linked list is \n\t");
             print_linkedList(H);
             pauseAndClear();
         }
@@ -187,8 +188,7 @@ int linkedList()
         printf("Cleaning the whole linked list\n");
         clean_linkedList(H);
         Sleep(400);
-        printf("Clean success\n");
-        printf("\nThe linked list is \n");
+        printf("\nClean success\n");
         Sleep(400);
         // 一打印直接出事
         // int ret = print_linkedList(H);
@@ -201,14 +201,29 @@ int linkedList()
     
     case 7:
     {
-        printf("7. Reverse the data in the linked list\n");
-        printf("");
+        printf("Reversing the data in the linked list\n");
+        Sleep(200);
+        reversed_order_linkedList(H);
+        print_linkedList(H);
+
+        pauseAndClear();
         break;
     }
         
 
     case 8:
-        printf("");
+        printf("Sorting the linked list\n");
+        Sleep(200);
+        sort_linkedList(H);
+
+        print_linkedList(H);
+        pauseAndClear();
+        break;
+
+    case 9:
+        Sleep(50);
+        print_linkedList(H);
+        pauseAndClear();
         break;
 
     case 0: 
