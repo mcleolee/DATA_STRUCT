@@ -342,8 +342,26 @@ int enter_linkedQueue(lkdq_ptr_node LQ,linkedQueue_data_type NEWdata)
     return 0;
 }
 
+linkedQueue_data_type exit_linkedQueue(lkdq_ptr_node LQ)
+{
+    if(0 == empty_linkedQueue(LQ))
+    {
+        printf("the queue is empty\n");
+        return -1;
+    }
 
-linkedQueue_data_type exit_linkedQueue(lkdq_ptr_node LQ);
+    ptr_node p = LQ->front->next;
+    LQ->front->next = p->next;
+
+    linkedQueue_data_type data = p->data;
+    //在free之前判断
+    if(p->next == NULL)
+    {
+        LQ->rear = LQ->front;
+    }
+    free(p);
+    return p->data;
+}
 
 //判空满
 int empty_linkedQueue(lkdq_ptr_node LQ)
@@ -364,7 +382,7 @@ int print_linkedQueue(lkdq_ptr_node LQ)
 {
     if(0 == empty_linkedQueue(LQ))
     {
-        printf("the queue is empty\n");
+        printf("Error: the queue is empty\n");
         return -1;
     }
     //顺着打印过来，和链表打印没什么区别

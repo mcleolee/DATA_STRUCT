@@ -260,15 +260,8 @@ int linkedQueue()
         printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
         printf("1. Create a new node for this linked queue\n");
         printf("2. Enter new datas into the linked queue\n");
-
-        printf("3. Delete data from the \n");
-        printf("4. Change data from the \n");
-        printf("5. Destory the whole \n");
-        printf("6. Clean the whole \n");
-        printf("7. Reverse the data in the \n");
-        printf("8. Sort the linked list from small to large\n");
-
-        printf("9. Print the linked queue now\n");
+        printf("3. Exit data from the linked queue \n");
+        printf("4. Print the linked queue now\n");
         printf("\n");
         printf("0. Exit\n");
         printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\n");
@@ -333,43 +326,23 @@ int linkedQueue()
 
     case 3:
     {
+        int ISTnum = 0;
+        printf("Exiting data from the linked queue \n");
+        printf("Input the number that you want to exit\n");
+        scanf("%d", &ISTnum);
+        Sleep(300);
+        for (int i = 0; i < ISTnum; i++)
+        {
+            printf("data=%c\n",exit_linkedQueue(H));
+        }
+        print_linkedQueue(H);
         pauseAndClear();
         break;
     }
 
     case 4:
     {
-        pauseAndClear();
-        break;
-    }
-
-    case 5:
-    {
-        pauseAndClear();
-        break;
-    }
-
-    case 6:
-    {
-        pauseAndClear();
-        break;
-    }
-
-    case 7:
-    {
-        pauseAndClear();
-        break;
-    }
-
-    case 8:
-    {
-        pauseAndClear();
-        break;
-    }
-
-    case 9:
-    {
-        printf("Print the linked queue now\n");
+        print_linkedQueue(H);
         pauseAndClear();
         break;
     }
