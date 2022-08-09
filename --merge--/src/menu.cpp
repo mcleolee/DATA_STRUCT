@@ -303,10 +303,30 @@ int linkedQueue()
 
     case 2:
     {
+        int input_menu_insert_linkedlist = 0;
+        int ISTnum = 0;
+        system("cls");
         printf("Enter new datas into the linked queue\n");
+        printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+        // Insert from the start of the linked queue.
 
-        enter_linkedQueue(H,48);
+        // printf("This is a test,enter 0 1 2 3 4\n");
+        // for (int i = 0; i < 5; i++)
+        // {
+        //     enter_linkedQueue(H, i + 48);
+        // }
+
+        printf("Enter numbers only, \nif you enter 5, you'llget 0 1 2 3 4\n");
+        printf("\nInput the number you want to enter\n");
+
+        scanf("%d", &ISTnum);
+        Sleep(600);
+        for (int i = 0; i < ISTnum; i++)
+        {
+            enter_linkedQueue(H, i+48);
+        }
         print_linkedQueue(H);
+        Sleep(300);
         pauseAndClear();
         break;
     }

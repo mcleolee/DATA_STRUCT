@@ -93,9 +93,9 @@ int show_linkedQueue(lkdq_ptr_node Q)
     }
     //顺着打印过来，和链表打印没什么区别
     ptr_node temp = Q->front;
-    while(Q->front)
+    while(temp->next)
     {
-        printf("%c",temp->next->data);
+        printf("%c ",temp->next->data);
         temp = temp->next;
     }
     printf("\n");
