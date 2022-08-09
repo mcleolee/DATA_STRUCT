@@ -250,40 +250,63 @@ int linkedList()
 
 int linkedQueue()
 {
+    lkdq_ptr_node H;
     int input_menu_linkedQueue = -1;
 
     while (input_menu_linkedQueue)
     {
-        printf("\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+        printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
         printf("\tLINKED QUEUE MENU\n");
         printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
-        printf("1. Create a new node for this \n");
-        printf("2. Insert new datas into the \n");
+        printf("1. Create a new node for this linked queue\n");
+        printf("2. Enter new datas into the linked queue\n");
+
         printf("3. Delete data from the \n");
         printf("4. Change data from the \n");
         printf("5. Destory the whole \n");
         printf("6. Clean the whole \n");
         printf("7. Reverse the data in the \n");
         printf("8. Sort the linked list from small to large\n");
-        printf("9. Print the  now\n");
+
+        printf("9. Print the linked queue now\n");
         printf("\n");
         printf("0. Exit\n");
         printf("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n\n");
 
         scanf("%d", &input_menu_linkedQueue);
         printf("\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
-    }
+    
 
     switch (input_menu_linkedQueue)
     {
     case 1:
     {
+        printf("Creating a new node for this linked queue\n");
+        Sleep(400);
+        H = create_linkedQueue();
+        if(H != NULL)
+        {
+            printf("The first node of the linked queue is created.\n");
+            printf("---------------------------------------------\n");
+        }
+        else
+        {
+            printf("FATAL:The first node of the linked queue is NOT created.\n");
+            system("pause");
+            break;
+        }
+        // 好像不能这里打印
+		Sleep(300);
         pauseAndClear();
         break;
     }
 
     case 2:
     {
+        printf("Enter new datas into the linked queue\n");
+
+        enter_linkedQueue(H,48);
+        print_linkedQueue(H);
         pauseAndClear();
         break;
     }
@@ -326,6 +349,7 @@ int linkedQueue()
 
     case 9:
     {
+        printf("Print the linked queue now\n");
         pauseAndClear();
         break;
     }
@@ -341,6 +365,7 @@ int linkedQueue()
     {
         printf("Wrong selection.\n");
         break;
+    }
     }
     }
 }

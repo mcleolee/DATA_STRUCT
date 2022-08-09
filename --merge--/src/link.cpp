@@ -298,7 +298,85 @@ int sort_linkedList(lkdlst_ptr_node LL)
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
+//++++++++++++++++++++++++++++++++++++++++++
+//  lkdq_ptr_node 是给 front 和 rear 的
+//    ptr_node 是给 next 和 data 的
+//++++++++++++++++++++++++++++++++++++++++++
+lkdq_ptr_node create_linkedQueue()
+{
+    // 创建头节点
+    ptr_node H = (ptr_node)malloc(sizeof(node));
+    if(NULL == H)
+    {
+        printf("Error: memory allocate failed\n");
+        return NULL;
+    }
+    // 初始化
+    H->next = NULL;
 
+    //创建???
+    lkdq_ptr_node LQ = (lkdq_ptr_node)malloc(sizeof(lkdq_node));
+    if(NULL == LQ)
+    {
+        printf("Error: memory allocate 2th failed\n");
+        return NULL;
+    }
+    LQ->front = LQ->rear = H;
+}
+
+//出入队
+int enter_linkedQueue(lkdq_ptr_node LQ,linkedQueue_data_type NEWdata)
+{
+    ptr_node p = (ptr_node)malloc(sizeof(node)); //不能用create函数捏
+    if(NULL == p)
+    {
+        printf("Error: memory allocate failed\n");
+        return -1;
+    }
+    p->data = NEWdata;
+
+    p->next = NULL;
+    LQ->rear->next = p;
+    LQ->rear = p;
+
+    return 0;
+}
+
+
+linkedQueue_data_type exit_linkedQueue(lkdq_ptr_node LQ);
+
+//判空满
+int empty_linkedQueue(lkdq_ptr_node LQ)
+{
+    if(LQ->front == LQ->rear)
+    {
+        // printf("the queue is empty\n");
+        return 0;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+//打印
+int print_linkedQueue(lkdq_ptr_node LQ)
+{
+    if(0 == empty_linkedQueue(LQ))
+    {
+        printf("the queue is empty\n");
+        return -1;
+    }
+    //顺着打印过来，和链表打印没什么区别
+    ptr_node temp = LQ->front;
+    while(LQ->front)
+    {
+        printf("%c",temp->next->data);
+        temp = temp->next;
+    }
+    printf("\n");
+    return 0;
+}
 
 
 

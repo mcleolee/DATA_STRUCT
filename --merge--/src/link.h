@@ -123,7 +123,7 @@ typedef struct node
     struct node *next;
 }node,*ptr_node;
 
-//指向首尾的两个指针
+//  指向首尾的两个指针 
 //     linkedQueue     |
 //-+-+-+-+-+-+-+|-+-+-+-+-+-+-+//
 //              |              //
@@ -136,6 +136,19 @@ typedef struct linkedQueue
     ptr_node rear;
 }lkdq_node,*lkdq_ptr_node;
 
+lkdq_ptr_node create_linkedQueue();
+
+//出入队
+int enter_linkedQueue(lkdq_ptr_node LQ,linkedQueue_data_type NEWdata);
+linkedQueue_data_type exit_linkedQueue(lkdq_ptr_node LQ);
+
+//判空满
+//好像不用判满？
+int empty_linkedQueue(lkdq_ptr_node LQ);
+// int  full_linkedQueue(lkdq_ptr_node LQ);
+
+//打印
+int print_linkedQueue(lkdq_ptr_node LQ);
 
 
 
